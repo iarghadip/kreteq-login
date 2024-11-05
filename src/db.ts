@@ -5,10 +5,7 @@ import mongoose from 'mongoose';
  */
 export const connectDB = async () => {
     try {
-        await mongoose.connect('mongodb://localhost:27017/mydb', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
+        await mongoose.connect('mongodb://localhost:27017/mydb');
         console.log('Connected to database.');
     } catch (error) {
         console.error('Database connection failed:', error);

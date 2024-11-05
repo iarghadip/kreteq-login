@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Serve static files from the "views" directory
 app.use(express.static(path.join(__dirname, 'views')));
 
+// Serve Bootstrap and other node_modules
+app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
+
 // Database connection
 mongoose.connect('mongodb://localhost:27017/mydb')
     .then(() => console.log('Connected to MongoDB'))
